@@ -1,1 +1,14 @@
 <h3>Poisson-based algorithm</h3>
+
+{% for poisson in poissons %}
+<div>
+	<p>{{ poisson }}</p>
+</div>
+{% endfor %}
+
+
+<form method="POST" action="/">
+	{% csrf_token %}
+	{{ form }}
+	<input type="submit" name="Create poisson">
+</form>

@@ -4,6 +4,7 @@
 <div>
 	<!-- create a link localhost:8000/update/id -->
 	<a href="{% url 'update' task.id %}">update</a>
+	<a href="{% url 'delete' task.id %}">delete</a>
 	<p>{{ task }}</p>
 </div>
 {% endfor %}

@@ -7,8 +7,8 @@ class Poisson(models.Model):
 	width = models.IntegerField(default=800)
 	height = models.IntegerField(default=800)
 
-	def area(self):
-		area = self.width * self.height
-
 	def __str__(self):
 		return self.title
+
+	def area(self):
+		return self.width * self.height

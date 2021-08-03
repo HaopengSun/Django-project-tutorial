@@ -17,3 +17,11 @@ def index(request):
     context = {'poissons': poissons, 'form': form}
 
     return render(request, 'poisson/index.html', context)
+
+def detail(request, pk):
+    poisson = Poisson.objects.get(id=pk)
+    area = Poisson.area(poisson)
+
+    context = {'poisson': poisson, 'area': area}
+
+    return render(request, 'poisson/detail.html', context)

@@ -1,14 +1,28 @@
-<h3>Poisson-based algorithm</h3>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/addons/p5.sound.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8" />
 
-{% for poisson in poissons %}
-<div>
-	<p>{{ poisson }}</p>
-</div>
-{% endfor %}
+  </head>
+  <body>
+  	<h3>Poisson-based algorithm</h3>
+
+	{% for poisson in poissons %}
+	<span>
+		<a href="{% url 'detail' poisson.id %}">detail</a>
+		<p>{{ poisson }}</p>
+	</span>
+	{% endfor %}
 
 
-<form method="POST" action="/">
-	{% csrf_token %}
-	{{ form }}
-	<input type="submit" name="Create poisson">
-</form>
+	<form method="POST" action="/">
+		{% csrf_token %}
+		{{ form }}
+		<input type="submit" name="Create poisson">
+	</form>
+    <!-- <script src="sketch.js"></script> -->
+  </body>
+</html>

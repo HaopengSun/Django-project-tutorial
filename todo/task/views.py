@@ -23,3 +23,20 @@ def index(request):
 	context = {'tasks': tasks, 'form': form}
 
 	return render(request, 'task/list.html', context)
+
+def update(request, pk):
+	task = Task.objects.get(id=pk)
+
+	#prefill the form
+	form = TaskForm(instance=task)
+
+	if request.method == 'POST':
+		# instance means we need to update a specific todo instead of creating a new one
+		form = TaskForm(request.POST, instance=task)
+		if form.is_valid():
+			form.save()
+		return redirect('/')
+
+	context = {'form':form}
+
+	return render(request, 'task/update.html', context)

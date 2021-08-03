@@ -2,6 +2,8 @@
 
 {% for task in tasks %}
 <div>
+	<!-- create a link localhost:8000/update/id -->
+	<a href="{% url 'update' task.id %}">update</a>
 	<p>{{ task }}</p>
 </div>
 {% endfor %}

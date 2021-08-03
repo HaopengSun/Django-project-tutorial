@@ -5,3 +5,12 @@
 	<p>{{ task }}</p>
 </div>
 {% endfor %}
+
+<!-- action="/" means when users submit the form -->
+<!-- they will return to "/" page -->
+<form method="POST" action="/">
+	<!-- security mesure -->
+	{% csrf_token %}
+	{{ form.title }}
+	<input type="submit" name="Create task">
+</form>

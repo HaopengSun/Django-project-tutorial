@@ -5,7 +5,11 @@
 	<!-- create a link localhost:8000/update/id -->
 	<a href="{% url 'update' task.id %}">update</a>
 	<a href="{% url 'delete' task.id %}">delete</a>
-	<p>{{ task }}</p>
+	{% if task.complete == True %}
+	<strike>{{ task }}</strike>
+	{% else %}
+	<span>{{ task }}</span>
+	{% endif %}
 </div>
 {% endfor %}
 

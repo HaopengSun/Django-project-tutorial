@@ -1,4 +1,5 @@
 from django.db import models
+from poisson.algorithm import calculation
 
 class Poisson(models.Model):
 	title = models.CharField(max_length=200)
@@ -11,4 +12,4 @@ class Poisson(models.Model):
 		return self.title
 
 	def area(self):
-		return self.width * self.height
+		return calculation(self.width, self.height)

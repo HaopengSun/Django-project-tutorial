@@ -1,5 +1,5 @@
 from django.db import models
-from poisson.algorithm import calculation
+from poisson.algorithm import canvas
 
 class Poisson(models.Model):
 	title = models.CharField(max_length=200)
@@ -11,5 +11,5 @@ class Poisson(models.Model):
 	def __str__(self):
 		return self.title
 
-	def area(self):
-		return calculation(self.width, self.height)
+	def canvasArea(self):
+		return canvas(self.width, self.height)

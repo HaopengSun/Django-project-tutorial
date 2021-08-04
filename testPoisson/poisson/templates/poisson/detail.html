@@ -1,3 +1,14 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'poisson/style.css' %}">
+<script rel="stylesheet" type="text/javascript" src="{% static 'poisson/p5.js' %}"></script>
+
 <h5>{{ poisson }}</h5>
-<h6>{{ area }}</h6>
+<h6>{{ canvasArea }}</h6>
 <a href="{% url 'index' %}">back to home</a>
+
+<script>
+	const area = {{ canvasArea }}
+	console.log(area)
+</script>
+<script rel="stylesheet" type="text/javascript" src="{% static 'poisson/sketch.js' %}"></script>

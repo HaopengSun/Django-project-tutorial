@@ -1,2 +1,2 @@
-def calculation(width, height):
+def canvas(width, height):
 	return width * height

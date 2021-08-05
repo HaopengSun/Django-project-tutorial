@@ -1,6 +1,10 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'poisson/style.css' %}">
+
 {% for poisson in poissons %}
 <span>
 	<a href="{% url 'detail' poisson.id %}">detail</a>
+	<a href="{% url 'delete' poisson.id %}">delete</a>
 	<p>{{ poisson }}</p>
 </span>
 {% endfor %}

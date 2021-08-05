@@ -1,0 +1,11 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'poisson/style.css' %}">
+
+<h2>Are you sure delete {{ poisson }}?</h2>
+
+<form method="POST" action="">
+	{% csrf_token %}
+	<input type="submit" name="comfirm">
+</form>
+
+<a href="{% url 'index' %}">cancel</a>

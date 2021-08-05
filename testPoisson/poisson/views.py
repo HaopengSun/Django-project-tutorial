@@ -25,3 +25,14 @@ def detail(request, pk):
     context = {'poisson': poisson, 'canvasArea': canvasArea}
 
     return render(request, 'poisson/detail.html', context)
+
+def delete(request, pk):
+    poisson = Poisson.objects.get(id=pk)
+
+    if request.method == 'POST':
+        poisson.delete()
+        return redirect('/')
+
+    context = {'poisson': poisson}
+
+    return render(request, 'poisson/delete.html', context)

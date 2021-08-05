@@ -20,9 +20,8 @@ def index(request):
 
 def detail(request, pk):
     poisson = Poisson.objects.get(id=pk)
-    canvasArea = Poisson.canvasArea(poisson)
 
-    context = {'poisson': poisson, 'canvasArea': canvasArea}
+    context = {'poisson': poisson}
 
     return render(request, 'poisson/detail.html', context)
 

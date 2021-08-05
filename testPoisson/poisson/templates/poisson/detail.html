@@ -4,11 +4,13 @@
 <script rel="stylesheet" type="text/javascript" src="{% static 'poisson/p5.js' %}"></script>
 
 <h5>{{ poisson }}</h5>
-<h6>{{ canvasArea }}</h6>
+<h6>{{ poisson.width }}</h6>
+<h6>{{ poisson.height }}</h6>
 <a href="{% url 'index' %}">back to home</a>
 
 <script>
-	const area = {{ canvasArea }}
-	console.log(area)
+	const width = {{ poisson.width }}
+	const height = {{ poisson.height }}
+	console.log(width, height)
 </script>
 <script rel="stylesheet" type="text/javascript" src="{% static 'poisson/sketch.js' %}"></script>
